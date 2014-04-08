@@ -1,5 +1,5 @@
-<div id='sidebar'>
 
+<div id="content">
   <div class='panel'>
     <% if (locals.user || locals.current_user) { %>
       <div class='header'>
@@ -22,33 +22,6 @@
       </div>
     <% } %>
   </div>
-
-  <% if (locals.current_user) { %>
-    <div class="panel">
-      <div class='inner'>
-        <a href='/topic/create' id='create_topic_btn'>
-          <button class='btn btn-success'>发布话题</button>
-        </a>
-      </div>
-    </div>
-  <% } %>
-
-  <% if (locals.no_reply_topics) { %>
-  <div class='panel'>
-    <div class='header'>
-      <span class='col_fade'>无人回复的话题</span>
-    </div>
-    <div class='inner'>
-      <% if (no_reply_topics.length > 0) { %>
-        <ul class="unstyled">
-          <%- partial('topic/small', { collection: no_reply_topics, as: 'topic' }) %>
-        </ul>
-      <% } else {  %>
-        <p>无</p>
-      <% } %>
-    </div>
-  </div>
-  <% } %>
 
   <% if (locals.tops) { %>
   <div class='panel'>
@@ -86,5 +59,4 @@
     </div>
   </div>
   <% } %>
-
 </div>

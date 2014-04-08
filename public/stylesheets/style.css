@@ -13,7 +13,7 @@ body {
 
 #main {
   width: 90%;
-  max-width: 1400px;
+  max-width: 1080px;
   min-width: 960px;
   margin: 40px auto 160px;
   min-height:400px;
@@ -24,13 +24,6 @@ body {
 }
 #content {
   padding: 0;
-  margin-right: 300px;
-}
-#sidebar {
-  width: 290px;
-  font-size: 14px;
-  float: right;
-  margin-bottom: 20px;
 }
 #content .panel {
   background: hsla(0, 0%, 100%, 1);
@@ -61,17 +54,6 @@ body {
   text-decoration: none;
   margin-right: 0.5em;
 }
-#sidebar .panel {
-  background: hsla(0, 0%, 100%, 1);
-  font-size: 13px;
-}
-#sidebar .header {
-  color: hsl(202, 6%, 34%);
-}
-#sidebar .topic_title {
-  max-width: 270px;
-  font-size: 14px;
-}
 #footer {
   height: 160px;
   clear: both;
@@ -80,7 +62,7 @@ body {
   box-shadow: 0 -1px 0px rgba(168, 168, 168, 0.33);
 }
 #footer_main {
-  width: 1040px;
+  max-width: 1080px;
   margin: 0px auto;
   color: #e2e2e2;
   padding: 20px 0px;
@@ -507,6 +489,10 @@ img.unread {
 
 /* single */
 #create_topic_btn {
+    float: left;
+}
+#messages {
+    margin-left: 2em;
 }
 .board {
   margin-top: 10px;
@@ -624,7 +610,7 @@ textarea#title {
   width: 100%;
   min-width: 960px;
   margin: 0px auto;
-  max-width: 1400px;
+  max-width: 1080px;
 }
 .navbar .brand {
   padding: 4px 0px 0px 20px;
@@ -731,7 +717,7 @@ div[class$=content] > blockquote > p {
   font-size: 14px;
 }
 
-/* about score on sidebar */
+/* about score on members */
 .top_score {
   color: gray;
   padding: 2px;

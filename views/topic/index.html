@@ -1,4 +1,5 @@
-<div id='sidebar'>
+
+<div id='content'>
   <div class='panel'>
     <div class='header'>
       <span class='col_fade'>作者</span>
@@ -10,44 +11,20 @@
 
   <div class='panel'>
     <div class='header'>
-      <span class='col_fade'>作者其它话题</span>
-    </div>
-    <div class='inner'>
-      <% if (locals.author_other_topics && author_other_topics.length > 0) { %>
-      <ul class='unstyled'>
-      <%- partial('topic/small', { collection: author_other_topics, as: 'topic' }) %>
-      </ul>
-      <% } else {  %>
-      <p>无</p>
-      <% } %>
-    </div>
-  </div>
-
-  <div class='panel'>
-    <div class='header'>
-      <span class='col_fade'>无人回复的话题</span>
-    </div>
-    <div class='inner'>
-      <% if (locals.no_reply_topics && no_reply_topics.length > 0) { %>
-      <ul class='unstyled'>
-      <%- partial('topic/small', { collection: no_reply_topics, as: 'topic' }) %>
-      </ul>
-      <% } else {  %>
-      <p>无</p>
-      <% } %>
-    </div>
-  </div>
-</div>
-
-<div id='content'>
-  <div class='panel'>
-    <div class='header'>
       <span class="topic_full_title">
         <% if (topic.top) { %>
           <span class='put_top'>置顶</span>
         <% } %>
         <%= topic.title %>
       </span>
+      <div id="topic_tags">
+        <% if (topic.tags.length > 0) { %>
+          <span class='col_fade'>标签：</span> 
+          <%- partial('tag/tag_in_topic',{ collection: topic.tags, as: 'tag' }) %>
+        <% } else { %>
+          <span class='col_fade'>标签：无</span>  
+        <% } %>
+      </div>
       <div class="changes">
         <div>
           发布于 <%= topic.friendly_create_at %>
@@ -158,6 +135,22 @@
       </form>
     </div>
   </div>
+
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>作者其它话题</span>
+    </div>
+    <div class='inner no-padding'>
+      <% if (locals.author_other_topics && author_other_topics.length > 0) { %>
+      <ul class='unstyled'>
+      <%- partial('topic/abstract', { collection: author_other_topics, as: 'topic' }) %>
+      </ul>
+      <% } else {  %>
+      <p>无</p>
+      <% } %>
+    </div>
+  </div>
+
   <% } %>
 </div>
 

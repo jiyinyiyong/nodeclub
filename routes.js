@@ -31,6 +31,8 @@ var config = require('./config');
 module.exports = function (app) {
   // home page
   app.get('/', site.index);
+  app.get('/members', site.members);
+  app.get('/extremes', site.extremes);
 
   // sign up, login, logout
   if (config.allow_sign_up) {

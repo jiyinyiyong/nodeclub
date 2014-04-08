@@ -1,0 +1,37 @@
+<div id="content">
+
+  <% if (locals.no_reply_topics) { %>
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>无人回复的话题</span>
+    </div>
+    <div class='inner no-padding'>
+      <% if (no_reply_topics.length > 0) { %>
+        <ul class="unstyled">
+          <%- partial('topic/abstract', { collection: no_reply_topics, as: 'topic' }) %>
+        </ul>
+      <% } else {  %>
+        <p>无</p>
+      <% } %>
+    </div>
+  </div>
+  <% } %>
+
+  <% if (locals.hot_topics) { %>
+    <div class='sep10'></div>
+    <div class='panel'>
+      <div class='header'>
+        <span class='col_fade'>热门话题</span>
+      </div>
+      <div class='inner no-padding'>
+        <% if (hot_topics.length >0) { %>
+        <ul class='unstyled'>
+        <%- partial('topic/abstract', { collection: hot_topics, as: 'topic' }) %>
+        </ul>
+        <% } else { %>
+        <p>无</p>
+        <% } %>
+      </div>
+    </div>
+  <% } %>
+</div>
