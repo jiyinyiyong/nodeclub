@@ -1,9 +1,5 @@
 <% if(tag.is_selected){ %>
-<span class='tag_selectable tag_select' tag_id='<%= tag._id %>'>
-	<%= tag.name %>
-</span>
+  <option selected class="tag_select" tag_id="<%= tag._id %>"><%= tag.name %></option>
 <% }else{ %>
-<span class='tag_selectable' tag_id='<%= tag._id %>'>
-	<%= tag.name %>
-</span>
+  <option class="" tag_id="<%= tag._id %>"><%= tag.name %></option>
 <% } %>

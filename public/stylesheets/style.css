@@ -120,12 +120,6 @@ a.light:hover {
   background-color: #F5F5F5;
   box-shadow: 0px 1px 0px rgb(224, 224, 224);
 }
-.panel .moon {
-  padding: 10px;
-}
-.panel .moon_tags {
-  padding-left: 10px;
-}
 .panel .inner .unstyled li div {
   text-overflow: ellipsis;
 }
@@ -188,11 +182,12 @@ a.light:hover {
   padding: 10px;
 }
 .cell.message a, .cell[message_id] a {
-  max-width: 460px;
+  max-width: 700px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-block;
   vertical-align: middle;
+  white-space: nowrap;
 }
 .cell.more{
   padding: 10px;
@@ -235,12 +230,24 @@ a.last_time {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -o-border-radius: 8px;
-  border-radius: 8px;
+  border-radius: 45%;
 
-  padding: 1px 5px;
+  padding: 3px 6px;
   background-color: #46a546;
   color: white;
   margin-right: 0.5em;
+  font-size: 12px;
+}
+#tags {
+}
+#tags .topic_tag {
+    margin-right: 1em;
+    background: rgb(244, 242, 245);
+    padding: 4px 6px;
+    border-radius: 2px;
+}
+#edit_tags a {
+    color: rgb(206, 194, 194);
 }
 .edit_tag {
   margin-left: 8px;
@@ -489,10 +496,14 @@ img.unread {
 
 /* single */
 #create_topic_btn {
-    float: left;
+    margin: 8px;
+}
+#create_topic_btn.at_topic_list {
+    float: right;
 }
 #messages {
-    margin-left: 2em;
+    float: right;
+    margin: 13px;
 }
 .board {
   margin-top: 10px;

@@ -1,33 +1,27 @@
 
 <div id="content">
   <div class='panel'>  
-    <div class='inner'>
-      <% if (locals.current_user) { %>
-        <a href='/topic/create' id='create_topic_btn'>
-          <button class='btn btn-success'>发布话题</button>
-        </a>
+    <% if (locals.current_user) { %>
+      <a href='/topic/create' id='create_topic_btn' class="at_topic_list">
+        <button class='btn btn-success'>发布话题</button>
+      </a>
+    <% } %>
+    <% if (locals.current_user && (locals.current_user.messages_count > 0)) { %>
+      <a id="messages" href='/my/messages'>
+        <span class='big <%= locals.current_user.messages_count ? 'messages_count' : '' %>'>
+          <%= locals.current_user.messages_count || 0 %>
+        </span>
+      </a>
+    <% } %>
+    <div id='tags' class="inner">
+      <% if (locals.tags && tags.length > 0) { %>
+        <%- partial('tag/tag', tags) %>
+      <% } else { %>
+        <p>无标签</p>
       <% } %>
-      <% if (locals.current_user && (locals.current_user.messages_count > 0)) { %>
-        <a id="messages" href='/my/messages'>
-          <span class='big <%= locals.current_user.messages_count ? 'messages_count' : '' %>'>
-            <%= locals.current_user.messages_count || 0 %>
-          </span> 未读消息
-        </a>
+      <% if (locals.current_user && current_user.is_admin) { %>
+        <span id="edit_tags"><a href='/tags/edit'>编辑标签</a></span>
       <% } %>
-    </div>
-    <div>
-      <div class='moon'>
-        <% if (locals.current_user && current_user.is_admin) { %>
-        <span class='fr'><a href='/tags/edit'>[编辑标签]</a></span>
-        <% } %>
-      </div>
-      <div class='moon_tags'>
-        <% if (locals.tags && tags.length > 0) { %>
-          <%- partial('tag/tag', tags) %>
-        <% } else { %>
-          <p>无标签</p>
-        <% } %>
-      </div>
     </div>
   </div>
 

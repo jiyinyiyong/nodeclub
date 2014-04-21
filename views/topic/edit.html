@@ -48,10 +48,11 @@
             placeholder="请在此输入标题，字数控制在10到100个之间"
             ><%= locals.title || '' %></textarea>
 
-          <div id='tags' class='tab-pane'>
-            <div class='tags_select'>
+          <div id='tags'>
+            <input type='hidden' id='topic_tags' name='topic_tags' value=''></input>
+            <select>
               <%- partial('tag/tag_selectable',{collection:tags, as:'tag'}) %>
-            </div>
+            </select>
           </div>
 
           <div class='markdown_editor in_editor'>
@@ -73,7 +74,6 @@
             </div>
           </div>
 
-          <input id='topic_tags' name='topic_tags' value=''></input>
           <input type='hidden' name='_csrf' value='<%= csrf %>' />
         </fieldset>
       </form>
